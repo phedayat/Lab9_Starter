@@ -88,79 +88,15 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
-    let form = document.querySelector('form');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      let output = document.querySelector('output');
-      let firstNum = document.querySelector('#first-num').value;
-      let secondNum = document.querySelector('#second-num').value;
-      let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+    window.TrackJS && TrackJS.install({ 
+      token: "cdccf8e70aa6444684f53859f865d2c6"
+      // for more configuration options, see https://docs.trackjs.com
     });
-
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-
-    // Start your code here
-    // You may move this JS to another file if you wish
-    errorBtns[0].addEventListener("click", e => {
-      console.log("Console log demo");
-    });
-    errorBtns[1].addEventListener("click", e => {
-      console.error("Console error demo");
-    });
-    errorBtns[2].addEventListener("click", e => {
-      console.count("Console count button: ");
-    });
-    errorBtns[3].addEventListener("click", e => {
-      console.warn("Console warn demo");
-    });
-    errorBtns[4].addEventListener("click", e => {
-      console.assert(2 == 3); // needs more here?
-    });
-    errorBtns[5].addEventListener("click", e => {
-      console.clear();
-    });
-    errorBtns[6].addEventListener("click", e => {
-      console.dir(errorBtns[6]);
-    });
-    errorBtns[7].addEventListener("click", e => {
-      console.dirxml(errorBtns[6]);
-    });
-    errorBtns[8].addEventListener("click", e => {
-      console.group();
-    });
-    errorBtns[9].addEventListener("click", e => {
-      console.groupEnd();
-    });
-    errorBtns[10].addEventListener("click", e => {
-      console.table([[0,0,1], [1,1,1], [0,0,0]]);
-    });
-    errorBtns[11].addEventListener("click", e => {
-      console.time("timer");
-    });
-    errorBtns[12].addEventListener("click", e => {
-      console.timeEnd("timer");
-    });
-    errorBtns[13].addEventListener("click", e => {
-      function ilovecse110(){
-        function profpowellrocks(){
-          function ilovemytas(){
-            console.trace();
-          }
-          ilovemytas();
-        }
-        profpowellrocks();
-      }
-      ilovecse110();
-    });
-    errorBtns[14].addEventListener("click", e => {
-      console.log(somevar);
-    });
-    errorBtns[15].addEventListener("click", e => {
-      // This will be for the try/catch throw stuff
-    });
+    TrackJS.track("Testing TrackJS!");
   </script>
+  <script src="index.js" type="text/javascript"></script>                      
 </body>
 
 </html>
